@@ -15,8 +15,7 @@ public class AlimentosServiceImpl implements AlimentosService {
     @Autowired
     private AlimentosRepository repository;
 
-    public AlimentosServiceImpl() {
-    }
+ 
 
     @Override
     public void save(Alimentos alimento) {
