@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head th:include="layout :: htmlhead"></head>
+
+    <body>
+        <div class="container">
+            <nav th:replace="layout :: menu">(menu)</nav>
+            <p><h1>Alimentos</h1></p>
+
+            <p>
+                <a th:href="@{/alimento/novo}" class="btn btn-outline-primary btn-lg">Novo</a>
+            </p>
+
+            <table class="table">
+                <thead class="thead-light">
+                    <th socpe="col">Alimentos</th>
+                    <th socpe="col">Proporção</th>
+                    <th socpe="col">Carboidratos</th>
+                    <th socpe="col">Medida (g/ml)</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr socpe="row"  th:each="umalimento : ${listaalimento}">
+                        <td th:text="${umalimento.nomeAlimento}"></td>
+                        <td th:text="${umalimento.proporcao}"></td>
+                        <td th:text="${umalimento.valorCarb}"></td>
+                        <td th:text="${umalimento.medida}"></td>
+                        <td><a th:href="@{'/alimento/alterar/' + ${umalimento.id}}" class="btn btn-primary btn-sm">Alterar</a></td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+        <div th:include="layout :: footer" id="footer">(footer)</div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $("#alimentos").on("click", ".js-delete", function(){
+					var button = $(this);
+					bootbox.confirm("Você tem certeza que quer excluir este alimento?",function(result){
+						if(result){
+							$.ajax({
+		                        url: "/alimento/delete/" + button.attr("data-id"),
+		                        method: "GET",
+		                        success: function () {
+		                        	window.location.href = "/alimento/"
+		                        }
+		                    });
+						}
+					});
+				});
+
+            });
+        </script>
+
+    </body>
+</html>
