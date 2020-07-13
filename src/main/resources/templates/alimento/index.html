@@ -8,14 +8,19 @@
         <div class="container">
             <nav th:replace="layout :: menu">(menu)</nav>
             <p><h1>Alimentos</h1></p>
+            
+            <div class="form-group">
+                <p>
+                    <a th:href="@{/alimento/novo}" class="btn btn-info btn-lg">Novo</a>
+                    <div class="md-form mt-0 w-50"> 
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </p>
+            </div>
 
-            <p>
-                <a th:href="@{/alimento/novo}" class="btn btn-outline-primary btn-lg">Novo</a>
-            </p>
-
-            <table class="table">
+            <table class="table table-bordered" id="alimentos">
                 <thead class="thead-light">
-                    <th socpe="col">Alimentos</th>
+                    <th class="table-info" socpe="col">Alimentos</th>
                     <th socpe="col">Proporção</th>
                     <th socpe="col">Carboidratos</th>
                     <th socpe="col">Medida (g/ml)</th>
@@ -27,7 +32,11 @@
                         <td th:text="${umalimento.proporcao}"></td>
                         <td th:text="${umalimento.valorCarb}"></td>
                         <td th:text="${umalimento.medida}"></td>
-                        <td><a th:href="@{'/alimento/alterar/' + ${umalimento.id}}" class="btn btn-primary btn-sm">Alterar</a></td>
+                        <td>
+                            <a th:href="@{'/alimento/alterar/' + ${umalimento.id}}" class="btn btn-outline-info btn-sm">Alterar</a>
+                            <button class='btn btn-outline-danger btn-sm js-delete'
+								th:data-id="${umalimento.id}"><span class="oi oi-bug"></span>Excluir</button>
+                        </td>
                     </tr>    
                 </tbody>
             </table>

@@ -44,5 +44,11 @@ public class AlimentoController {
     public ModelAndView edit(@PathVariable("id") Alimento alimento){
         return new ModelAndView("alimento/form","alimento",alimento);
     }
+
+    @GetMapping(value="/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") Alimento alimento){
+        service.delete(alimento);
+        return new ModelAndView("redirect:/alimento");
+    }
     
 }
