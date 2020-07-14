@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:fragment="htmlhead">
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap-glyphicons/bdd2cbfba0/css/bootstrap-glyphicons.css}" />
+        <link rel="stylesheet" th:href="@{/site.css}" />
     </head>
     <body>
         <nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -13,6 +15,9 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li class="nav-item active">
                     <a class="nav-link" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/usuario">Usuários</a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="/alimento">Alimentos</a>

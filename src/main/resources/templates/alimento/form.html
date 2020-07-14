@@ -15,20 +15,28 @@
 
                     <input type="hidden" th:field="*{id}">
 
-                    <div class="form-gourp">
-                        <label>Alimento</label>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Alimento</span>
+                        </div>
                         <input type="text" th:field="*{nomeAlimento}" class="form-control">
                     </div>
-                    <div class="form-gourp">
-                        <label>Proporção</label>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Proporção</span>
+                        </div>
                         <input type="text" th:field="*{proporcao}" class="form-control">
                     </div>
-                    <div class="form-gourp">
-                        <label>Carboídratos</label>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Carboídratos</span>
+                        </div>
                         <input type="text" th:field="*{valorCarb}" class="form-control">
                     </div>
-                    <div class="form-gourp">
-                        <label>Medida(g/ml)</label>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Medida(g/ml)</span>
+                        </div>
                         <input type="text" th:field="*{medida}" class="form-control">
                     </div>
 
