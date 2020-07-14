@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Usuario {
     @Id
@@ -18,14 +20,16 @@ public class Usuario {
     private String eMail;
     private String senha;
     @Temporal(value = TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNasc;
     @Temporal(value = TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataInicio;
 
     public long getId() {
         return id;
     }
-
+    
     public void setId(final long id) {
         this.id = id;
     }
