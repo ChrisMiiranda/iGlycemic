@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head th:include="layout :: htmlhead"></head>
+
+    <body>
+        <div class="container">
+            <nav th:replace="layout :: menu">(menu)</nav>
+            <p><h1>Alimentos</h1></p>
+            
+            <div class="row">
+                <div class="col-sm">
+                    <a th:href="@{/alimento/novo}" class="btn btn-info">Novo</a>
+                </div>
+                <div class="col-sm col-3">
+                    <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+                </div>
+            </div>
+            <p></p>
+
+            <table class="table table-bordered" id="alimentos">
+                <thead class="thead-light">
+                    <th class="table-info" socpe="col">Alimentos</th>
+                    <th socpe="col">Proporção</th>
+                    <th socpe="col">Carboidratos</th>
+                    <th socpe="col">Medida (g/ml)</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr socpe="row"  th:each="umalimento : ${listaalimento}">
+                        <td th:text="${umalimento.nomeAlimento}"></td>
+                        <td th:text="${umalimento.proporcao}"></td>
+                        <td th:text="${umalimento.valorCarb}"></td>
+                        <td th:text="${umalimento.medida}"></td>
+                        <td>
+                            <a th:href="@{'/alimento/alterar/' + ${umalimento.id}}" class="btn btn-outline-info btn-sm">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </a>
+                            <button class='btn btn-outline-danger btn-sm js-delete' th:data-id="${umalimento.id}">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+        <div th:include="layout :: footer" id="footer">(footer)</div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $("#alimentos").on("click", ".js-delete", function(){
+					var button = $(this);
+					bootbox.confirm("Você tem certeza que quer excluir este alimento?",function(result){
+						if(result){
+							$.ajax({
+		                        url: "/alimento/delete/" + button.attr("data-id"),
+		                        method: "GET",
+		                        success: function () {
+		                        	window.location.href = "/alimento/"
+		                        }
+		                    });
+						}
+					});
+				});
+
+            });
+        </script>
+
+    </body>
+</html>

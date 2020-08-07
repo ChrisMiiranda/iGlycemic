@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Alimentos {
+public class Alimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
