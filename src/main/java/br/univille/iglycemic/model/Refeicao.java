@@ -19,7 +19,7 @@ public class Refeicao {
     @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     private Usuario usuario;
     @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
-    private List<Alimento> colAlimentos = new ArrayList<>();
+    private List<Alimentos> colAlimentos = new ArrayList<>();
     private int totalCarb;
     private int fatorSens;
     private int totalInsu;
@@ -40,11 +40,11 @@ public class Refeicao {
         this.usuario = usuario;
     }
 
-    public List<Alimento> getColAlimentos() {
+    public List<Alimentos> getColAlimentos() {
         return colAlimentos;
     }
 
-    public void setColAlimentos(List<Alimento> colAlimentos) {
+    public void setColAlimentos(List<Alimentos> colAlimentos) {
         this.colAlimentos = colAlimentos;
     }
 
