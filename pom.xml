@@ -26,11 +26,11 @@
       <artifactId>bootstrap</artifactId>
       <version>4.0.0</version>
     </dependency>
-	<dependency>
-	  <groupId>org.webjars</groupId>
-	  <artifactId>bootstrap-glyphicons</artifactId>
-	  <version>bdd2cbfba0</version>
-	</dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap-glyphicons</artifactId>
+      <version>bdd2cbfba0</version>
+    </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery</artifactId>
@@ -73,6 +73,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
   <build>
