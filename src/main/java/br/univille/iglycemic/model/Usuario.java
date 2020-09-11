@@ -19,6 +19,8 @@ public class Usuario {
     private String nome;
     private String eMail;
     private String senha;
+    private int alvoGlic;
+    private int fatorSens;
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataNasc;
@@ -29,7 +31,7 @@ public class Usuario {
     public long getId() {
         return id;
     }
-    
+
     public void setId(final long id) {
         this.id = id;
     }
@@ -43,12 +45,12 @@ public class Usuario {
     }
 
     public String geteMail() {
-		return eMail;
-	}
+        return eMail;
+    }
 
-	public void seteMail(final String eMail) {
-		this.eMail = eMail;
-	}
+    public void seteMail(final String eMail) {
+        this.eMail = eMail;
+    }
 
     public String getSenha() {
         return senha;
@@ -72,5 +74,21 @@ public class Usuario {
 
     public void setDataInicio(final Date dataInicio) {
         this.dataInicio = dataInicio;
+    }
+
+    public int getAlvoGlic() {
+        return alvoGlic;
+    }
+
+    public void setAlvoGlic(int alvoGlic) {
+        this.alvoGlic = alvoGlic;
+    }
+
+    public int getFatorSens() {
+        return fatorSens;
+    }
+
+    public void setFatorSens(int fatorSens) {
+        this.fatorSens = fatorSens;
     }
 }
