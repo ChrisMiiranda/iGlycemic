@@ -29,9 +29,15 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Senha</span>
+                            <span class="input-group-text" id="">Fator Sensibilidade</span>
                         </div>
-                        <input type="password" placeholder="Senha" minlength="8" required th:field="*{senha}" class="form-control">
+                        <input type="number" placeholder="Fator Sensibilidade" required th:field="*{fatorSens}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Glicemia Alvo</span>
+                        </div>
+                        <input type="number" placeholder="Glicemia Alvo" required th:field="*{alvoGlic}" class="form-control">
                     </div>
                     <div class="form-group">
                         <div class="input-group-prepend">

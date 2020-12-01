@@ -19,7 +19,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="">Nome Completo</span>
                         </div>
-                        <input type="text" placeholder="Nome" th:field="*{usuario}" class="form-control">
+                        <input type="text" placeholder="Nome" th:field="*{usuario.nome}" class="form-control">
                     </div>
                     <div class="form-group mb-3">
                         <div class="input-group-prepend">
@@ -31,7 +31,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="">Data/Hora da medicao</span>
                         </div>
-                        <input type="date" th:field="*{dataHora}" class="form-control">
+                        <input type="datetime" th:field="*{dataHora}" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>
 
