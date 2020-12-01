@@ -31,7 +31,7 @@
                     <tr socpe="row"  th:each="ummedicao : ${listamedicao}">
                         <td th:text="${ummedicao.usuario.nome}"></td>
                         <td th:text="${ummedicao.glicemia}"></td>
-                        <td th:text="${ummedicao.totalInsu}"></td>
+                        <td style="color: green" th:text="${ummedicao.totalInsu}"></td>
                         <td th:text="${ummedicao.dataHora}"></td>
                         <td>
                             <a th:href="@{'/medicao/alterar/' + ${ummedicao.id}}" class="btn btn-outline-info btn-sm">
